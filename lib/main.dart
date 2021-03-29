@@ -1,5 +1,5 @@
 import 'package:animations/common/theme.dart';
-import 'package:animations/implicit_animtion/AnimatedOpacity.dart';
+import 'package:animations/implicit_animtion/implicit.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,6 +32,6 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: AnimatedOpacityScreen());
+        body: ImplicitAnimation());
   }
 }
