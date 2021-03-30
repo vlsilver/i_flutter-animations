@@ -14,7 +14,7 @@ var text2 = 'Các tham số của một Implicit Widget Animation:\n'
 
 var text3 =
     '- Khi value of property widget animation "change" và implicit widget "rebuild" thì implicit widget sẽ'
-    ' được animated from old value of property to new value focus follow duration.\n'
+    ' được animated from old value of property to new value focus follow duration, trừ TweenAnimationBuilder.\n'
     '- Khi lần đầu tiên được build thì widget sẽ không có bất kỳ animation nào.\n'
     '- Implicit Widget Animation chỉ có thể sử dụng các property của một StatefulWidget cha để animated.';
 

@@ -26,12 +26,54 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _animation = 0.0;
+  var _implicit = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: ImplicitAnimation());
+        body: SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          GestureDetector(
+            onTap: () {
+              _animation = _animation == 0.0
+                  ? MediaQuery.of(context).size.height - 50.0
+                  : 0.0;
+              _implicit = 0.0;
+              setState(() {});
+            },
+            child: AppBar(
+              toolbarHeight: 50,
+              title: Text(widget.title),
+            ),
+          ),
+          AnimatedContainer(
+            height: _animation,
+            duration: Duration(milliseconds: 500),
+            child: Container(
+              color: Colors.red,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              _implicit = _implicit == 0.0
+                  ? MediaQuery.of(context).size.height - 100.0
+                  : 0.0;
+              _animation = 0.0;
+              setState(() {});
+            },
+            child: AppBar(
+              title: Text('Implicit Animations'),
+            ),
+          ),
+          Container(
+            height: _implicit,
+            child: _implicit == 0 ? Container() : ImplicitAnimation(),
+          )
+        ],
+      ),
+    ));
   }
 }
