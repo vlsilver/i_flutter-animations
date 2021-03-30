@@ -41,5 +41,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+<!-- Config for url_launcher lib -->
+	<array>
+ 		<string>https</string>
+  		<string>http</string>
+	</array>
+
 </dict>
 </plist>
